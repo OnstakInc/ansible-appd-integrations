@@ -9,12 +9,13 @@
   get_url:
     url: http://172.16.189.17/machineagent-bundle-64bit-linux-4.5.13.2238.zip
     dest: /tmp/machine-agent.zip
-    mode: '0755'
+    mode: 0666
 
 - name: Deploy AppDynamics Machine Agent
   unarchive:
     src: /tmp/machine-agent.zip
     dest: /opt/appdynamics/machine-agent
+    remote_src: true
 
 - name: Copy Machine Agent Service File
   template:
