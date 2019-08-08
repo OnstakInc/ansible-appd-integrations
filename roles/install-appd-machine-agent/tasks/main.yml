@@ -1,4 +1,7 @@
 ---
+- name: Update Machine Hostname
+  hostname: name='{{ group_name }}'
+
 - name: Add Unzip Tools
   yum: name=unzip state=present
 
@@ -20,7 +23,7 @@
 - name: Copy Configuration File
   template:
     src: controller-info.xml.j2
-    dest: /opt/appdynamics/machine-agent/controller-info.xml
+    dest: /opt/appdynamics/machine-agent/conf/controller-info.xml
     mode: 0666
 
 - name: Update Directory Permissions
