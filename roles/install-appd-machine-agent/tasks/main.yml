@@ -11,11 +11,17 @@
     dest: /tmp/machine-agent.zip
     mode: 0666
 
+- name: Make AppDynamics Directory
+  file: path=/opt/appdynamics/machine-agent state=directory
+
 - name: Deploy AppDynamics Machine Agent
   unarchive:
     src: /tmp/machine-agent.zip
     dest: /opt/appdynamics/machine-agent
     remote_src: true
+
+- name: Update Directory Permissions
+  file: dest=/opt/appdynamics/machine-agent owner=root group=root recurse=yes
 
 - name: Copy Machine Agent Service File
   template:
