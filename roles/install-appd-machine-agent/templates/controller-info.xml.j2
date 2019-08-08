@@ -20,14 +20,14 @@
     This can be overridden with the environment variable 'APPDYNAMICS_CONTROLLER_PORT' or the system property
     '-Dappdynamics.controller.port'  -->
 
-    <controller-port>{{ machine_agent[controller_port] }}</controller-port>
+    <controller-port>{{ machine_agent['controller_port'] }}</controller-port>
 
     <!--  This specifies if the AppDynamics agent should use SSL (HTTPS) to connect to the Controller. If you set this to
     true, the controller port property above should be set to the HTTPS port of the Controller. This can be overridden
     with the environment variable 'APPDYNAMICS_CONTROLLER_SSL_ENABLED' or the system property
     '-Dappdynamics.controller.ssl.enabled'  -->
 
-    <controller-ssl-enabled>{{ machine_agent[controller_ssl_enabled] }}</controller-ssl-enabled>
+    <controller-ssl-enabled>{{ machine_agent['controller_ssl_enabled'] }}</controller-ssl-enabled>
 
     <!--  Set this flag to 'true' to enable features required for AppDynamics Orchestration, including the following:
     1) Enables the agent to execute tasks specified in AppDynamics Orchestration workflows.
@@ -53,20 +53,20 @@
     controller settings. This can be overridden with the environment variable 'APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY' or
     the system property '-Dappdynamics.agent.accountAccessKey'  -->
 
-    <account-access-key>{{ machine_agent[account_access_key] }}</account-access-key>
+    <account-access-key>{{ machine_agent['account_access_key'] }}</account-access-key>
 
     <!--  If the AppDynamics Controller is running in multi-tenant mode or you are using the AppDynamics SaaS Controller,
     you must specify the account name for this agent to authenticate with the controller. If you are running in
     single-tenant mode (the default) there is no need to configure this value. This can be overridden with the
     environment variable 'APPDYNAMICS_AGENT_ACCOUNT_NAME' or the system property '-Dappdynamics.agent.accountName'  -->
 
-    <account-name>{{ machine_agent[account_name] }}</account-name>
+    <account-name>{{ machine_agent['account_name'] }}</account-name>
 
     <!--  If this agent is licensed for Server Monitoring, set this flag to 'true' to enable Server Monitoring expanded
     metrics. This can be overridden with the environment variable 'APPDYNAMICS_SIM_ENABLED' or the system property
     '-Dappdynamics.sim.enabled'  -->
 
-    <sim-enabled>{{ machine_agent[sim_enabled] }}</sim-enabled>
+    <sim-enabled>{{ machine_agent['sim_enabled'] }}</sim-enabled>
 
     <!--  This value is used to create the hierarchy infrastructure view in the UI for this machine. Each hierarchy level
     should be separated with a vertical bar ("|"). For example, if this machine belongs to "DataRack1" and it is located
