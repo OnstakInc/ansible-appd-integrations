@@ -7,7 +7,7 @@
 
 - name: Download AppDynamics Machine Agent
   get_url:
-    url: http://172.16.189.17/machineagent-bundle-64bit-linux-4.5.13.2238.zip
+    url: '{{ machine_agent_dist }}'
     dest: /tmp/machine-agent.zip
     mode: 0666
 
