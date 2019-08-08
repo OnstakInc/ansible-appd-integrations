@@ -1,6 +1,6 @@
 ---
 
-agent_config: {
+agent_configs: {
 
   ### Machine Agent - controller-info.xml Configuration Variables
   machine_agent: {
