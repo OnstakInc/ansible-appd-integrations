@@ -1,0 +1,12 @@
+---
+- name: Stop Machine Agent Service
+  service: name=machine-agent state=stopped enabled=yes daemon_reload=yes
+  ignore_errors: yes
+
+- name: Remove Machine Agent
+  file: path=/opt/appdynamics/machine-agent state=absent
+
+- name: Remove Machine Agent Service
+  file: path=/etc/systemd/system/machine-agent.service state=absent
+
+  

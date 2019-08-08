@@ -2,7 +2,7 @@
   - hosts: all
     become: true
     roles:
-      - install-appd-machine-agent
+      - clean-appd-machine-agent
 
     vars_files:
       - "../vars/common.yml"
