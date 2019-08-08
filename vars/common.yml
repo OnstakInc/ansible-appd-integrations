@@ -1,3 +1,8 @@
 ---
-
-description: Managed By Ansible
+### Machine Agent - controller-info.xml Configuration Variables
+controller-host: '<your-controller-host>'
+controller-port: '<your-controller-port>'
+controller-ssl-enabled: '<ssl-enabled>'
+account-access-key: '<your-access-key>'
+account-name: '<your-account-name>'
+sim-enabled: '<monitoring-enabled>'

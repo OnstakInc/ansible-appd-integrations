@@ -23,6 +23,12 @@
     dest: /opt/appdynamics/machine-agent
     remote_src: true
 
+- name: Copy Configuration File
+  template:
+    src: controller-info.xml.j2
+    dest: /opt/appdynamics/machine-agent/controller-info.xml
+    mode: 0666
+
 - name: Update Directory Permissions
   file: dest=/opt/appdynamics/machine-agent owner=root group=root recurse=yes
 
