@@ -1,6 +1,6 @@
 ---
 - name: Update Machine Hostname
-  hostname: name='{{ group_name }}'
+  hostname: name='{{ inventory_hostname }}'
 
 - name: Add Unzip Tools
   yum: name=unzip state=present
