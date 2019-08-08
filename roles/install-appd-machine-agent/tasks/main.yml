@@ -34,3 +34,5 @@
 
 - name: Start and Enable Machine Agent Service
   service: name=machine-agent state=started enabled=yes
+
+  
