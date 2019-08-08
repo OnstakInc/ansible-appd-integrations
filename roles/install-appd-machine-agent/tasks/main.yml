@@ -1,13 +1,10 @@
 ---
-- name: Update Machine Hostname
-  hostname: name='{{ group_names[0] }}'
-
 - name: Add Unzip Tools
   yum: name=unzip state=present
 
 - name: Download AppDynamics Machine Agent
   get_url:
-    url: '{{ machine_agent_dist }}'
+    url: "{{ machine_agent['machine_agent_dist'] }}"
     dest: /tmp/machine-agent.zip
     mode: 0666
 

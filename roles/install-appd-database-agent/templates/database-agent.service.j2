@@ -1,0 +1,15 @@
+[Unit]
+Description=AppDynamics Database Agent
+
+[Service]
+
+Type=simple
+
+User=root
+Group=root
+
+ExecStart=/bin/sh /opt/appdynamics/database-agent/start-dbagent
+
+[Install]
+
+WantedBy=multi-user.target

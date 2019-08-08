@@ -1,0 +1,41 @@
+---
+- name: Add Unzip Tools
+  yum: name=unzip state=present
+
+- name: Install OpenJDK
+  yum: name=java-1.8.0-openjdk state=present
+
+- name: Download AppDynamics Database Agent
+  get_url:
+    url: "{{ database_agent['database_agent_dist'] }}"
+    dest: /tmp/database-agent.zip
+    mode: 0666
+
+- name: Make AppDynamics Directory
+  file: path=/opt/appdynamics/database-agent state=directory
+
+- name: Deploy AppDynamics Database Agent
+  unarchive:
+    src: /tmp/database-agent.zip
+    dest: /opt/appdynamics/database-agent
+    remote_src: true
+
+- name: Copy Configuration File
+  template:
+    src: controller-info.xml.j2
+    dest: /opt/appdynamics/database-agent/conf/controller-info.xml
+    mode: 0666
+
+- name: Update Directory Permissions
+  file: dest=/opt/appdynamics/database-agent owner=root group=root recurse=yes
+
+- name: Copy Database Agent Service File
+  template:
+    src: database-agent.service.j2
+    dest: /etc/systemd/system/database-agent.service
+    mode: 0755
+
+- name: Start and Enable Database Agent Service
+  service: name=database-agent state=started enabled=yes
+
+  
