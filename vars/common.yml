@@ -8,3 +8,5 @@ account_name: '<your-account-name>'
 sim_enabled: '<monitoring-enabled>'
 application_name: '<your-application-name>'
 machine_agent_dist: '<machine_agent_download_link>'
+
+### <=====================================================> ###
