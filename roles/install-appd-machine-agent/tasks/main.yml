@@ -4,7 +4,7 @@
 
 - name: Download AppDynamics Machine Agent
   get_url:
-    url: "{{ agent_configs['machine_agent']['machine_agent_dist'] }}"
+    url: "{{ machine_agent['machine_agent_dist'] }}"
     dest: /tmp/machine-agent.zip
     mode: 0666
 
