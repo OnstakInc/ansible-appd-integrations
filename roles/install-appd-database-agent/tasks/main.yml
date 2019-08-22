@@ -1,6 +1,13 @@
 ---
+- name: Set timezone to Asia/Tokyo
+  timezone:
+    name: UTC
+
 - name: Add Unzip Tools
   yum: name=unzip state=present
+
+- name: Add Wget Tools
+  yum: name=wget state=present
 
 - name: Install OpenJDK
   yum: name=java-1.8.0-openjdk state=present
