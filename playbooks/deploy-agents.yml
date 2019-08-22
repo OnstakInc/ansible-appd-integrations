@@ -1,4 +1,9 @@
 ---
+  - hosts: php
+    become: true
+    roles:
+      - install-appd-php-agent
+
   - hosts: db
     become: true
     roles:
