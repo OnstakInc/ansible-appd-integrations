@@ -20,8 +20,11 @@
 - name: Copy Configuration File
   template:
     src: installVars.j2
-    dest: /opt/appdynamics/php-agent/installVars
+    dest: /opt/appdynamics/php-agent/appdynamics-php-agent-linux_x64/installVars
     mode: 0666
+
+- name: Install AppDynamics PHP Agent
+  shell: "/bin/bash /opt/appdynamics/php-agent/appdynamics-php-agent-linux_x64/runme.sh"
 
 - name: Update Directory Permissions
   file: dest=/opt/appdynamics/php-agent owner=root group=root recurse=yes
