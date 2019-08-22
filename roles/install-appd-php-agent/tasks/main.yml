@@ -2,7 +2,7 @@
 - name: Add Unzip Tools
   yum: name=unzip state=present
 
-- name: Add WGet Tools
+- name: Add Wget Tools
   yum: name=wget state=present
 
 - name: Download AppDynamics PHP Agent
