@@ -2,7 +2,10 @@
 - name: Add Unzip Tools
   yum: name=unzip state=present
 
-- name: Download AppDynamics Machine Agent
+- name: Add WGet Tools
+  yum: name=wget state=present
+
+- name: Download AppDynamics PHP Agent
   shell: "wget {{ php_agent['php_agent_dist'] }} -O /tmp/php-agent.zip"
 
 - name: Make AppDynamics Directory
