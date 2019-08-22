@@ -2,6 +2,9 @@
 - name: Add Unzip Tools
   yum: name=unzip state=present
 
+- name: Add Wget Tools
+  yum: name=wget state=present
+
 # - name: Download AppDynamics Machine Agent
 #   get_url:
 #     url: "{{ machine_agent['machine_agent_dist'] }}"
