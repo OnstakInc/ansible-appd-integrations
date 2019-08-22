@@ -2,11 +2,14 @@
 - name: Add Unzip Tools
   yum: name=unzip state=present
 
+# - name: Download AppDynamics Machine Agent
+#   get_url:
+#     url: "{{ machine_agent['machine_agent_dist'] }}"
+#     dest: /tmp/machine-agent.zip
+#     mode: 0666
+
 - name: Download AppDynamics Machine Agent
-  get_url:
-    url: "{{ machine_agent['machine_agent_dist'] }}"
-    dest: /tmp/machine-agent.zip
-    mode: 0666
+  shell: "wget {{ machine_agent['machine_agent_dist'] }} -O /tmp/machine-agent.zip"
 
 - name: Make AppDynamics Directory
   file: path=/opt/appdynamics/machine-agent state=directory
