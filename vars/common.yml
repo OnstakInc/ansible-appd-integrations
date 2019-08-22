@@ -19,3 +19,13 @@ database_agent:
   account_name: '<your-account-name>'
   database_agent_dist: '<database_agent_download_link>'
 
+### PHP Agent - installVars Configuration Variables
+php_agent:
+  controller_host: '<your-controller-host>'
+  controller_port: '<your-controller-port>'
+  controller_ssl_enabled: '<ssl-enabled>'
+  account_access_key: '<your-access-key>'
+  account_name: '<your-account-name>'
+  application_name: '<your-account-name>'
+  php_agent_dist: '<database_agent_download_link>'
+

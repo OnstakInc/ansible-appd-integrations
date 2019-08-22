@@ -1,0 +1,29 @@
+---
+- name: Add Unzip Tools
+  yum: name=unzip state=present
+
+- name: Download AppDynamics Machine Agent
+  shell: "wget {{ php_agent['php_agent_dist'] }} -O /tmp/php-agent.zip"
+
+- name: Make AppDynamics Directory
+  file: path=/opt/appdynamics/php-agent state=directory
+
+- name: Deploy AppDynamics PHP Agent
+  unarchive:
+    src: /tmp/php-agent.zip
+    dest: /opt/appdynamics/php-agent
+    remote_src: true
+
+- name: Copy Configuration File
+  template:
+    src: installVars.j2
+    dest: /opt/appdynamics/php-agent/installVars
+    mode: 0666
+
+- name: Update Directory Permissions
+  file: dest=/opt/appdynamics/php-agent owner=root group=root recurse=yes
+
+- name: Restart Apache HTTP Service
+  service: name=httpd state=restarted enabled=yes
+
+  
