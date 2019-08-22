@@ -4,6 +4,10 @@
     roles:
       - install-appd-php-agent
 
+    vars_files:
+      - "../vars/common.yml"
+
+
   - hosts: db
     become: true
     roles:
